@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <body bgcolor="#000000">
+        <head>
+            <title>Mark Vrablic</title>
+            <meta charset="UTF-8">
+            <meta name="description" content="Mark Vrablic project portfolio">
+            <meta name="keywords" content="Mark, Vrablic, Resume, Portfolio, Project">
+            <meta name="author" content="Mark Vrablic">
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js></script>
+            <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2">
+            <style>
+                h3 {text-align: center}
+                h4 {text-align: right}
+                .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+                }
+                .switch input {display:none;}
+                .hilightswitch {
+                position: relative;
+                display: inline;
+                width: 60px;
+                height: 34px;
+                }
+                .hilightswitch input {display:none;}
+                .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+                }
+                .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+                }
+                .shader:before {
+                background-color: black;
+                color: black;
+                -webkit-transition: .4s;
+                transition: .4s;
+                }
+                input:checked + .slider {
+                background-color: #2196F3;
+                }
+                input:focus + .slider {
+                box-shadow: 0 0 1px #2196F3;
+                }
+                input:checked + .slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+                }
+                input:checked + .shader:before {
+                background-color: #FFFFFF;
+                color: #FFFFFF;
+                }
+                /* Rounded sliders */
+                .slider.round {
+                border-radius: 34px;
+                }
+                .slider.round:before {
+                border-radius: 50%;
+                }
+                .videoWrapper {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 */
+                padding-top: 25px;
+                height: 0;
+                }
+                .videoWrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                }
+            </style>
+        </head>
+        <div class="w3-container w3-black w3-bottombar w3-border-blue">
+            <h1 align="center">Mark Vrablic's Project Portfolio</h1>
+            <h2 align="right"><a href="https://COASTER19.github.io/resume/Mark Vrablic Resume.pdf">Resume available here</a></h2>
+        </div>
+        <div class="w3-row-padding w3-black w3-topbar w3-border-black">
+            <!-- Analog Color Organ -->
+            <button onclick="document.getElementById('project1').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Analog Color Organ</h2>
+                <p>LED lights flash to music</p>
+                <img src="https://i.imgur.com/kREp35Oh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- Room automation system -->
+            <button onclick="document.getElementById('project2').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Room Automation System</h2>
+                <p>Unlock the door and turn off the lights from anywhere</p>
+                <img src="https://i.imgur.com/hI7rIfAh.png" alt="Lights" style="height:100%;max-height:200px" class="w3-border">
+                <br>
+                <br>
+            </button>
+            <!-- FPGA robot arm -->
+            <button onclick="document.getElementById('project3').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>FPGA Robot Arm</h2>
+                <p>A virtual assistant for your desk</p>
+                <img src="https://i.imgur.com/MPT41Goh.png" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- Electric Scooter -->
+            <button onclick="document.getElementById('project11').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Electric Scooter</h2>
+                <p>Revival and upgrading of a trashed scooter</p>
+                <img src="https://i.imgur.com/URtexT4h.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- Digital LED controller -->
+            <button onclick="document.getElementById('project5').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Digital LED Strip controller</h2>
+                <p>A simple PCB to control 12V LED strips</p>
+                <img src="https://i.imgur.com/dbLt69ch.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- PPAT Lisa -->
+            <button onclick="document.getElementById('project6').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Power-Wheelchair joystick</h2>
+                <p>Moves out of the way automatically</p>
+                <img src="https://i.imgur.com/MmmqPU4h.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- Bowtie -->
+            <button onclick="document.getElementById('project7').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>LED Bowtie</h2>
+                <p>Fashion is better with RGB</p>
+                <img src="https://i.imgur.com/gpI26ZFh.jpg" alt="Lights" style="height:100%;max-height:200px" class="w3-border">
+                <br>
+                <br>
+            </button>
+            <!-- 6.013 waveguide -->
+            <button onclick="document.getElementById('project8').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Waveguide and Ring Resonator</h2>
+                <p>Filters out different RF frequencies</p>
+                <img src="https://i.imgur.com/yfzbUqkh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- Christmas light controller -->
+            <button onclick="document.getElementById('project9').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Christmas Light Controller</h2>
+                <p>8 channels of holiday spirit</p>
+                <img src="https://i.imgur.com/G86jRSfh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- JTR -->
+            <button onclick="document.getElementById('project13').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Three Story Catapult</h2>
+                <p>Launches fruit really far</p>
+                <img src="https://i.imgur.com/x0qTPFbh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- Nice-rack -->
+            <button onclick="document.getElementById('project4').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Hall-wide audio system</h2>
+                <p>Listen to music in the bathrooms and lounges</p>
+                <img src="https://i.imgur.com/XsMvgwth.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- Room mods -->
+            <button onclick="document.getElementById('project12').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Room improvements</h2>
+                <p>Cabinets, wall-to-wall desk, flooring, and projector</p>
+                <img src="https://i.imgur.com/JOymVQKh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- e7440 -->
+            <button onclick="document.getElementById('project10').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Dell Precision E7440</h2>
+                <p>Motherboard SMD repair</p>
+                <img src="https://i.imgur.com/vjG755jh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- IOT Motion Sensor -->
+            <button onclick="document.getElementById('project14').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>IOT Motion Sensor</h2>
+                <p>Reverse engineering and modification</p>
+                <img src="https://i.imgur.com/5sYZPqQh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- BLDC motor controller -->
+            <button onclick="document.getElementById('project15').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>BLDC Motor Controller</h2>
+                <p>This one didn't work well</p>
+                <img src="https://i.imgur.com/K3dGtwrh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- car stereo -->
+            <button onclick="document.getElementById('project16').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Car Stereo Modification</h2>
+                <p>Reverse engineering Bose interface</p>
+                <img src="https://i.imgur.com/vjG755jh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- TactionTablet -->
+            <button onclick="document.getElementById('project17').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>TactionTablet</h2>
+                <p>Tactile graphics display</p>
+                <img src="https://i.imgur.com/vjG755jh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- Cell phone repair -->
+            <button onclick="document.getElementById('project18').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>Cell Phone Repair</h2>
+                <p>For a few different phones</p>
+                <img src="https://i.imgur.com/vjG755jh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- DART Departure Board -->
+            <button onclick="document.getElementById('project19').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>DART Departure Board</h2>
+                <p>Real time arrivals without GTFS-Realtime</p>
+                <img src="https://i.imgur.com/i4VNMQbh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+            <!-- K40 Laser Cutter -->
+            <button onclick="document.getElementById('project20').style.display='block'" class="w3-third w3-black w3-btn w3-hover-indigo">
+                <h2>K40 Laser Cutter</h2>
+                <p>Modifications to make it usable</p>
+                <img src="https://i.imgur.com/vjG755jh.jpg" alt="Lights" style="height:100%;max-height:200px">
+                <br>
+                <br>
+            </button>
+        </div>
+        <!-- project1 -->
+        <div id="project1" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project1').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Analog Color Organ</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <h2>Project Overview</h2>
+                            <p>The goal of this project was to replicate the popular color organs of the 1970s using analog electronics only - no microcontrollers or digital logic.  Once prototyping was completed, I designed and ordered a PCB for the project.  See the <a href="https://COASTER19.github.io/ColorOrgan.pdf">project report here</a> and a video of it in action below.</p>
+                            <p>This project is currently installed in the bathroom of my dorm, and can synchronize to the hall-wide audio system or display ambient effects.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/dbLt69c.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <h2>Video (starts at demo, rewind for board details)</h2>
+                    <div class="videoWrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/HUw1-Kxq9_U?rel=0&amp;start=157" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="w3-row">
+                        <h2 align="center"><a href="https://COASTER19.github.io/Analog Color Organ.zip">Gerber files available here (now with updated BOM)</a></h2>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project2 -->
+        <div id="project2" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project2').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Room Automation System</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <p>Using an Arduino with a bunch of relays, I built a room automation system capable of remotely controlling the lights, projector screen, and door lock.  The system also has a webcam to remotely monitor the room.  Boxes with 4 outlets each control miscellaneous devices.  The website was built following tutorials from W3Schools, and is also the basis for this website.</p>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <h2>Outlet box with relays</h2>
+                            <img src="https://i.imgur.com/nScX9MG.jpg" alt="Lights" class="w3-image">
+                            <h2>Website on desktop</h2>
+                            <img src="https://i.imgur.com/hI7rIfA.png" alt="Lights" class="w3-image">
+                        </div>
+                        <div class="w3-container w3-half">
+                            <h2>Website on mobile</h2>
+                            <img src="https://i.imgur.com/LhfzF9H.png" alt="Lights" style="height:100%;max-height:600px">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project3 -->
+        <div id="project3" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project3').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>FPGA Robot Arm</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <h2>Project Overview</h2>
+                            <p>The goal of this project was to project image and text notifications on a desk and interact with that projection via computer vision. The physical hardware platform for the project was a robotic arm, disguised as a common desk lamp, with a camera and projector at the end, all controlled by an FPGA. Notifications come from a connected computer and are keystone-corrected when projected, to eliminate distortion caused by projecting at an angle.</p>
+                            <p>I worked as part of a team of 3 on this project, being responsible for the keystone correction, serial communication, and sound effects.  These portions are shown in green on the block diagram below.  View the <a href="https://COASTER19.github.io/Digital Design Project.pdf">final report here</a>.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <h2>Video</h2>
+                            <div class="videoWrapper">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/hWRyzHjmXsQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <h2>Device in operation</h2>
+                            <img src="https://i.imgur.com/MPT41Go.png" alt="Lights" class="w3-image">
+                        </div>
+                        <div class="w3-container w3-half">
+                            <h2>Receiving a notification</h2>
+                            <img src="https://i.imgur.com/gm5w2ID.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <h2>Block Diagram</h2>
+                    <img src="https://i.imgur.com/1UL9u73.png" alt="Lights" class="w3-image">
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project4 -->
+        <div id="project4" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project4').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Hall-wide audio system</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <p>One of my halls oldest traditions is an audio system in all the bathrooms, lounges, and kitchen.  After more than 10 years of continuous use, however, it was in bad condition.  When the amp broke that was the final straw for a complete overhaul of the system.  Over the next year (using parts from MIT's e-waste), I rebuilt the entire system, replacing the speakers, adding attenuators to control the volume in different rooms, and replaced much of the wiring which was falling apart.  It is still in use today.</p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project5 -->
+        <div id="project5" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project5').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Digital LED strip controller</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <p>I built this controller with the intention of having an installation of 10 strips of 3528 LEDs on the ceiling of my room.  After 3 of the 4 lights in our dorm bathroom stopped working, however, I decided to prioritize an installation in there instead.  The sticky back of the LED tape fit perfectly between the tiles, and it is now affectionately called the RGBathroom. This was the first board used in it, and could only run through ambient color effects, unlike the Analog Color Organ project which replaced it.</p>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <h2>PCB</h2>
+                            <img src="https://i.imgur.com/LSWpG5l.jpg" alt="Lights" class="w3-image">
+                        </div>
+                        <div class="w3-container w3-half">
+                            <h2>Installation</h2>
+                            <img src="https://i.imgur.com/dbLt69c.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project6 -->
+        <div id="project6" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project6').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Power-Wheelchair joystick</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <h2>Project overview</h2>
+                            <p>I, as part of a team of 4, designed, built, documented, and maintained a powered joystick arm for people with multiple sclerosis.  It allows the controller to be retracted electronically, without requiring physical strength to push it out of the way.  The device is still in use at The Boston Home today.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <h2>Final mechanism installed</h2>
+                            <img src="https://i.imgur.com/yMkmH0b.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <h2>Video</h2>
+                    <div class="videoWrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/CsmaXUJWYeE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project7 -->
+        <div id="project7" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project7').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>LED Bowtie</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <p>Uses an ATTiny85 with 2 RGB LED rings to display various effects on the bowtie.  There are two buttons, one to switch between animations, and one to control the brightness of the selected animation.</p>
+                    <div class="videoWrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zOc-tgL9afA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project8 -->
+        <div id="project8" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project8').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Waveguide and Ring Resonator</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <h2>Project Abstract</h2>
+                            <p>This project examines ring resonators and how to efficiently build one from laser cut acrylic to operate in the UHF band. The final system provides 15 dB gain at the resonant frequency with the ring compared to without the ring.</p>
+                            <p>Read the <a href="https://COASTER19.github.io/WaveguideRingResonatorEvanescentFieldCoupling-Report.pdf">project report HERE</a>.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <h2>Hardware Setup</h2>
+                            <img src="https://i.imgur.com/yfzbUqk.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project9 -->
+        <div id="project9" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project9').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Christmas light controller</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <p>This device controls 8 outlets with Christmas lights.  An arduino communicates with an attached computer running Vixen, a program to make programing sequences less tedious.  I built this project in high school, and it has unfortunately since been disassembled, so the video is all the documentation I have.  </p>
+                    <div class="videoWrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/a_YLeChudtQ?rel=0&amp;start=71" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project10 -->
+        <div id="project10" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project10').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Dell Lattitude E7740 motherboard reapir</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br> 
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>This laptop was found in MIT's e-waste recycling.  Nothing appeared broken, but when plugged in it would try to draw more current than the power supply could source.  After taking it apart and verifying that the connector was not shorted, I started probing components on the motherboard.  Eventually, I found a capacitor that was shorted, likely by the metal plate below the keyboard which can be pressed down to touch the motherboard.  Replacing it and reassembling fixed the laptop.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/vjG755j.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project11 -->
+        <div id="project11" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project11').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Electric scooter repair and upgrading</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <p>In fall 2018 I had a class 1.5 miles away from the class immediately after.  This dilemma lead me to want an electric scooter, as I could easily carry one into class but also move faster than possible running.  I initially bought a broken Razor e300 scooter for $20 to fix, but got lucky and found this one abandoned and covered in rust in the recycling.  After finding suitable batteries, removing rust, replacing switches, and attaching a light, I had a working scooter!  Charging the batteries I have requires opening the frame, so I designed and ordered a PCB to facilitate the charging process with the charger I have as well as provide headers to monitor the battery voltage as I ride.</p>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <h2>Battery charging PCB</h2>
+                            <img src="https://i.imgur.com/Dj2xGWn.png" alt="Lights" class="w3-image">
+                        </div>
+                        <div class="w3-container w3-half">
+                            <h2>Scooter in its current state</h2>
+                            <img src="https://i.imgur.com/URtexT4.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <h2>Polycarbonate deck cutouts</h2>
+                    <img src="https://i.imgur.com/jebc9wL.png" alt="Lights" class="w3-image">
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project12 -->
+        <div id="project12" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project12').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Room improvements</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>In my dorm we get a large amount of freedom in what we do to our rooms.  With access to MIT's recycling, I was able to put some unusual but nice features in my room.  Large cabinets removed as part of a building renovation hang from the walls, a desk spans the furthest wall of the room without any legs, and a projector screen hangs in front of the couch.</p>
+                            <p>There is also laminate hardwood flooring in the room now, hiding the ugly yellow tiles underneath it.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/8Bs0AHk.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                    <img src="https://i.imgur.com/JOymVQK.jpg" alt="Lights" class="w3-image">
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project13 -->
+        <div id="project13" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project13').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Three story catapult</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>At the beginning of each year, my dorm builds a bunch of wooden contraptions to attract freshmen interested in our maker culture.  In May 2018, I was the construction lead for one of these projects, a large and very strong catapult.  This meant updating the CAD from 2015 when the catapult was last built as well as directing the construction of the device.  The whole catapult was built in a week of August 2018 and worked exceptionally well.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/x0qTPFb.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project14 -->
+        <div id="project14" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project14').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Reverse Engineering an IOT Motion Sensor</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>After leaving my dorm and moving to an apartment I wanted to set up a similar automation system.  Without ethernet between each area of the apartment, the system needed to be wireless.  I did this using the cheapest components possible, a system called SmartLife.</p>
+                            <p>The software was awful and unable to reset triggers automatically when detecting motion.  Rather than start over with a more expensive system, I reverse engineered and modified the sensor itself to accomplish this functionality.</p>
+                            <p>I believe the sensor used is a PIR612, but with no part number I cannot be sure.  The board differs substantially from the typical PIR Arduino sensors.  Luckily, I was able to find a datasheet with a similar application circuit and modify its delay and sensitivity appropriately for my application.</p>
+                            <br>
+                            <img src="https://i.imgur.com/5sYZPqQ.jpg" alt="PIR schematic" class="w3-image">
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://imgur.com/Ryq6sHk.jpg" alt="Motion Sensor Light" class="w3-image">
+                            <br>
+                            <br>
+                            <img src="https://i.imgur.com/KjRuVBn.jpg" alt="Motion Sensor PCB" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project15 -->
+        <div id="project15" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project15').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>BLDC Motor Controller</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>For a controls class midterm project my team built an asynchronous sensorless brushless DC motor controller.  The goal would be to attach it to one of our homemade scooters for demo if it worked well enough.  We reused 3 extra boards of a buck converter PCB I had designed and manufactured for a previous class to save time since grading would be based on controls.</p>
+                            <p>This was probably a mistake.  For the controls to work well, a clean measurement of the phase difference between voltage and current is critical.  With the lengthy wire runs from the bodged hardware, however, the entire system was incredibly noisy and could only spin a small quad-copter motor.</p>
+                            <p>(I should also mention that by "team" I mean myself and a very good friend who also builds lots of stuff.  We realized early on it wouldn't work well but with 1 week allotted for the entire project we didn't care to make it better)</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/K3dGtwr.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project16 -->
+        <div id="project16" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project16').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Car Stereo Modification</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>Purchasing a used car meant the stereo was outdated, lacking bluetooth support or voice controls.  Being an Audi, however, the sound system was designed by Bose and entirely nonstandard.  I reverse engineered the system to find a way to upgrade the radio to a standard one without sacrificing sound quality.</p>
+                            <p>The amplifier is not built into the head unit, but instead into the base of the car.  Further, the alternator output is not filtered so the input is super noisy so any high impedance inputs or outputs will be noisy.  Insted, the amplifier expects a very low impedance output while still being a lower voltage.  This meant that the line level outputs on the stereo I purchased couldn't be used without sacrificing quality.  The solution arrived at was twofold:</p>
+                            <p>1. Filter the input power to isolate noise into the head unit</p>
+                            <p>2. Use a line level converter transformer to convert the low impedance speaker outputs to low impedance line level outputs</p>
+                            <p>Amplifying the signal twice isn't ideal, but the sound quality is better than that from the native line level outputs where you can hear interference from the GPU and touchscreen activity.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/x0qTPFb.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project17 -->
+        <div id="project17" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project17').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>TactionTablet</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>At the beginning of each year, my dorm builds a bunch of wooden contraptions to attract freshmen interested in our maker culture.  In May 2018, I was the construction lead for one of these projects, a large and very strong catapult.  This meant updating the CAD from 2015 when the catapult was last built as well as directing the construction of the device.  The whole catapult was built in a week of August 2018 and worked exceptionally well.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/x0qTPFb.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project18 -->
+        <div id="project18" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project18').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>Cell Phone Repair</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>At the beginning of each year, my dorm builds a bunch of wooden contraptions to attract freshmen interested in our maker culture.  In May 2018, I was the construction lead for one of these projects, a large and very strong catapult.  This meant updating the CAD from 2015 when the catapult was last built as well as directing the construction of the device.  The whole catapult was built in a week of August 2018 and worked exceptionally well.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/x0qTPFb.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project19 -->
+        <div id="project19" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project19').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>DART Departure Board</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>A python webpage to display Dallas DART light rail real time arrivals. Real time data is not available through DART GTFS feeds so it is scraped from the mobile website instead.</p>
+                            <p>The code can easily be adapted for any DART rail station. Finding a train direction relies on knowing the ending destination, so the dart website link as well as destination stations will need to be updated. For a station as far north as Spring Valley this is simple, since there are no turn-back points between it and Parker Road. For other stations with multiple headsigns in both directions, all possible and turn-back points will need to be added to the northbound/southbound if statement.</p>
+                            <p>The code is <a href="https://github.com/COASTER19/DART_Departure_Board">available on Github here</a>. I also have a precompiled image for the Raspberry Pi Zero W since Google font + firefox-ESR setup became annoying on Raspbian Buster.</p>
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/i4VNMQb.jpg" alt="Lights" class="w3-image">
+                        </div>
+                        <div class="w3-row">
+                            <p>This slide from October 2020 leads me to believe feeds aren't going to be published anytime soon, but it is encouraging to know that they are considering changing the policy.</p>
+                        </div>
+                        <div class="w3-container w3-center">
+                            <img src="https://i.imgur.com/TSGKiAd.png" alt="DART Slide" class="w3-image" style="width:100%;max-width:550px">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- project20 -->
+        <div id="project20" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-top">
+                <header class="w3-container w3-blue">
+                    <span onclick="document.getElementById('project19').style.display='none'" 
+                        class="w3-closebtn">&times;</span>
+                    <h2>K40 Laser cutter</h2>
+                </header>
+                <div class="w3-container w3-indigo">
+                    <br>
+                    <br>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half">
+                            <p>For my thesis mid-pandemic I needed access to a laser cutter.  The easiest way to do this was to purchase the cheapest model of CO2 laser cutter available and modify it to fit my use case.</p>
+                            <p>The $280 K40 laser cutter fits the bill, but its primary purpose is to make japanese stamps.  In order to use its "40W" CO2 laser on other materials it needed:</p>
+                            <ul>
+                                <li>Bed clamp to keep the material in focus.  Inspired by <a href="http://www.scorchworks.com/Blog/spring-loaded-k40-laser-platform/">ScorchWorks "Spring Loaded Adjustable Bed"</a> but with 3/4" and 1/2" angle aluminum to maximise cutting area</li>
+                                <li>Drag chain and air assist to manage the smoke.  I designed and 3D printed these myself since my machine's dimensions were slightly smaller than standard (there is no single laser cutter that is the K40, every one is slightly different depending on supplier)</li>
+                                <li>Current feedback to control and safely limit the laser power.  This was pretty simple and involved drilling a hole for an ammeter in the control panel plate.  I also engraved a new wooden front with labels to make it look better.</li>
+                                <li>Water chiller to keep the tube ~20C.  I drilled 2 holes in the side of a Craigslist mini fridge and installed tubing from the laser cutter to the inside.  There I had a trashcan with aquarium pump to circulate the chilled water.  This is the weakest part of the laser and limits jobs to ~20 minutes without overheating.  A professional CW-5000 chiller which would provide similar performance for continuous running would cost $360.  That's more than the cost of the laser itself so it doesn't make sense here.</li>
+                            </ul>  
+                            <p>There's so much more to say about this than makes sense to fit on a page like this, but I don't want to get too deep into it as all of the interesting quirks of this machine are well documented by the community and summarized at <a href="https://k40laser.se">K40laser.se</a></p>
+                            
+                        </div>
+                        <div class="w3-container w3-half">
+                            <img src="https://i.imgur.com/x0qTPFb.jpg" alt="Lights" class="w3-image">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <script>
+            // Get the modal
+            var modal1 = document.getElementById('project1');
+            var modal2 = document.getElementById('project2');
+            var modal3 = document.getElementById('project3');
+            var modal4 = document.getElementById('project4');
+            var modal5 = document.getElementById('project5');
+            var modal6 = document.getElementById('project6');
+            var modal7 = document.getElementById('project7');
+            var modal8 = document.getElementById('project8');
+            var modal9 = document.getElementById('project9');
+            var modal10 = document.getElementById('project10');
+            var modal11 = document.getElementById('project11');
+            var modal12 = document.getElementById('project12');
+            var modal13 = document.getElementById('project13');
+            var modal14 = document.getElementById('project14');
+            var modal15 = document.getElementById('project15');
+            var modal16 = document.getElementById('project16');
+            var modal17 = document.getElementById('project17');
+            var modal18 = document.getElementById('project18');
+            var modal19 = document.getElementById('project19');
+            var modal20 = document.getElementById('project20');
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+            	if (event.target == modal1) {
+                    modal1.style.display = "none";
+                }
+                if (event.target == modal2) {
+                    modal2.style.display = "none";
+                }
+            	if (event.target == modal3) {
+                    modal3.style.display = "none";
+                }
+            	if (event.target == modal4) {
+                    modal4.style.display = "none";
+                }
+            	if (event.target == modal5) {
+                    modal5.style.display = "none";
+                }
+            	if (event.target == modal6) {
+                    modal6.style.display = "none";
+                }
+            	if (event.target == modal7) {
+                    modal7.style.display = "none";
+                }
+            	if (event.target == modal8) {
+                    modal8.style.display = "none";
+                }
+            	if (event.target == modal9) {
+                    modal9.style.display = "none";
+                }
+            	if (event.target == modal10) {
+                    modal10.style.display = "none";
+                }
+                if (event.target == modal11) {
+                    modal11.style.display = "none";
+                }
+                if (event.target == modal12) {
+                    modal12.style.display = "none";
+                }
+            	if (event.target == modal13) {
+                    modal13.style.display = "none";
+                }
+            	if (event.target == modal14) {
+                    modal14.style.display = "none";
+                }
+            	if (event.target == modal15) {
+                    modal15.style.display = "none";
+                }
+            	if (event.target == modal16) {
+                    modal16.style.display = "none";
+                }
+            	if (event.target == modal17) {
+                    modal17.style.display = "none";
+                }
+            	if (event.target == modal18) {
+                    modal18.style.display = "none";
+                }
+            	if (event.target == modal19) {
+                    modal19.style.display = "none";
+                }
+                if (event.target == modal20) {
+                    modal20.style.display = "none";
+                }
+            }
+            
+            
+        </script>
+    </body>
+</html>
