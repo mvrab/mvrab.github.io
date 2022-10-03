@@ -2,13 +2,10 @@
 <html>
 <body>
 
-<h2>Get the current URL</h2>
-
-<p id="demo"></p>
+<h2>Redirecting short URL</h2>
 
 <script>
-document.getElementById("demo").innerHTML = 
-"The full URL of this page is:<br>" + window.location.href;
+window.location.replace("http://link.markv.me" + window.location.pathname);
 </script>
 
 </body>
